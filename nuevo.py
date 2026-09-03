@@ -16,3 +16,8 @@ def dividir(a, b):
 
 def potencia(base, exponente):
     return base ** exponente
+
+def raiz_cuadrada(numero):
+    if numero < 0:
+        return "Error: no existe raiz de un numero negativo"
+    return numero ** 0.5
