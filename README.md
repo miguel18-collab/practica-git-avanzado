@@ -7,6 +7,8 @@ para practicar comandos avanzados de Git.
 - Sumar
 - Restar
 - Multiplicar
+- Dividir
+- Menú interactivo para seleccionar operaciones
 
 ## 📝 Cómo ejecutar
 ```
@@ -102,3 +104,6 @@ muestra este comando.
 
 ## ✅ Entrega
 Link de tu repositorio (fork) + pantallazo de "git log --oneline"
+
+## 🔍 Investigación adicional
+`git reflog` muestra el historial de cambios en HEAD (commits, resets, checkouts, merges), permitiendo recuperar commits "perdidos" tras un reset --hard o amend.
