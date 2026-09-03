@@ -8,3 +8,49 @@ def restar(a, b):
 
 def multiplicar(a, b):
     return a * b
+
+def dividir(a, b):
+    if b == 0:
+        return "Error: No se puede dividir por cero"
+    return a / b
+
+def menu():
+    print("Bienvenido a la calculadora mas genial del mundo")
+    print("Opciones:")
+    print("1. Sumar")
+    print("2. Restar")
+    print("3. Multiplicar")
+    print("4. Dividir")
+    opcion = input("Seleccione una opción (1/2/3/4): ")
+    
+    if opcion == "1":
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = sumar(a, b)
+        print(f"El resultado de la suma es: {resultado}")
+        
+    elif opcion == "2":
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = restar(a, b)
+        print(f"El resultado de la resta es: {resultado}")
+        
+    elif opcion == "3":
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = multiplicar(a, b)
+        print(f"El resultado de la multiplicación es: {resultado}")
+        
+    elif opcion == "4":
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = dividir(a, b)
+        print(f"El resultado de la división es: {resultado}")
+        
+    else:
+        print("Opción no válida. Por favor, seleccione 1, 2, 3 o 4.")
+
+if __name__ == "__main__":
+    menu()
+
+
