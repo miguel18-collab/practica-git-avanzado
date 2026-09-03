@@ -21,34 +21,33 @@ def menu():
     print("2. Restar")
     print("3. Multiplicar")
     print("4. Dividir")
-    opcion = input("Seleccione una opción (1/2/3/4): ")
     
-    if opcion == "1":
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = sumar(a, b)
-        print(f"El resultado de la suma es: {resultado}")
+    while True:
+        opcion = input("Seleccione una opción (1/2/3/4): ")
         
-    elif opcion == "2":
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = restar(a, b)
-        print(f"El resultado de la resta es: {resultado}")
-        
-    elif opcion == "3":
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = multiplicar(a, b)
-        print(f"El resultado de la multiplicación es: {resultado}")
-        
-    elif opcion == "4":
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = dividir(a, b)
-        print(f"El resultado de la división es: {resultado}")
-        
-    else:
-        print("Opción no válida. Por favor, seleccione 1, 2, 3 o 4.")
+        if opcion in ["1", "2", "3", "4"]:
+            try:
+                a = float(input("Ingrese el primer número: "))
+                b = float(input("Ingrese el segundo número: "))
+            except ValueError:
+                print("Error: Ingrese números válidos")
+                continue
+            
+            if opcion == "1":
+                resultado = sumar(a, b)
+                print(f"El resultado de la suma es: {resultado}")
+            elif opcion == "2":
+                resultado = restar(a, b)
+                print(f"El resultado de la resta es: {resultado}")
+            elif opcion == "3":
+                resultado = multiplicar(a, b)
+                print(f"El resultado de la multiplicación es: {resultado}")
+            elif opcion == "4":
+                resultado = dividir(a, b)
+                print(f"El resultado de la división es: {resultado}")
+            break
+        else:
+            print("Opción no válida. Por favor, seleccione 1, 2, 3 o 4.")
 
 if __name__ == "__main__":
     menu()
