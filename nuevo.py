@@ -27,3 +27,15 @@ def porcentaje(numero, porcentaje):
 
 def promedio(lista_numeros):
     return sum(lista_numeros) / len(lista_numeros)
+
+# Nueva funcionalidad: factorial
+def factorial(n):
+    """Calcula el factorial de un número entero no negativo."""
+    if n < 0:
+        return "Error: no existe factorial de negativo"
+    if n == 0:
+        return 1
+    resultado = 1
+    for i in range(1, n + 1):
+        resultado *= i
+    return resultado
