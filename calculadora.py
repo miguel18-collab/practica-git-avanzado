@@ -14,6 +14,9 @@ def dividir(a, b):
         return "Error: No se puede dividir por cero"
     return a / b
 
+def potencia(a, b):
+    return a ** b
+
 def menu():
     print("Bienvenido a la calculadora mas genial del mundo")
     print("Opciones:")
@@ -21,11 +24,12 @@ def menu():
     print("2. Restar")
     print("3. Multiplicar")
     print("4. Dividir")
+    print("5. Potencia")
     
     while True:
-        opcion = input("Seleccione una opción (1/2/3/4): ")
+        opcion = input("Seleccione una opción (1/2/3/4/5): ")
         
-        if opcion in ["1", "2", "3", "4"]:
+        if opcion in ["1", "2", "3", "4", "5"]:
             try:
                 a = float(input("Ingrese el primer número: "))
                 b = float(input("Ingrese el segundo número: "))
@@ -45,9 +49,12 @@ def menu():
             elif opcion == "4":
                 resultado = dividir(a, b)
                 print(f"El resultado de la división es: {resultado}")
+            elif opcion == "5":
+                resultado = potencia(a, b)
+                print(f"El resultado de la potencia es: {resultado}")
             break
         else:
-            print("Opción no válida. Por favor, seleccione 1, 2, 3 o 4.")
+            print("Opción no válida. Por favor, seleccione 1, 2, 3, 4 o 5.")
 
 if __name__ == "__main__":
     menu()
