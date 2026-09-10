@@ -107,3 +107,23 @@ Link de tu repositorio (fork) + pantallazo de "git log --oneline"
 
 ## 🔍 Investigación adicional
 `git reflog` muestra el historial de cambios en HEAD (commits, resets, checkouts, merges), permitiendo recuperar commits "perdidos" tras un reset --hard o amend.
+
+---
+
+## 🏷️ Teoría — Versionado Semántico (Semantic Versioning)
+
+Investigué [semver.org](https://semver.org/lang/es/). Formato: `MAJOR.MINOR.PATCH` ej: `v1.0.0`
+
+* **MAJOR (ej: 1.0.0 → 2.0.0):** Cambio grande e incompatible que rompe compatibilidad. Ejemplo en esta calculadora: cambiar `dividir(a,b)` para que lance excepción en vez de retornar string `"Error: no se puede dividir entre cero"` — todo el código que esperaba un string se rompería.
+* **MINOR (ej: 1.0.0 → 1.1.0):** Funcionalidad nueva compatible hacia atrás. Ejemplo: agregar `raiz_cuadrada()` o `factorial()` sin modificar las funciones existentes. No rompe nada.
+* **PATCH (ej: 1.0.0 → 1.0.1):** Corrección pequeña compatible. Ejemplo: corregir validación de `potencia()` o arreglar mensaje del `menu()` o corregir bug de `porcentaje()` — no agrega función, solo arregla.
+
+> Esta calculadora ya merece `v1.0.0` porque tiene operaciones básicas estables (sumar, restar, multiplicar, dividir, potencia, raiz, porcentaje, factorial) y menú funcional.
+
+---
+
+## 📦 Qué hace `stash` y qué hace `tag` (explicado con mis palabras)
+
+**`git stash`:** Guarda cambios sin comitear temporalmente y deja `working tree clean`. Es como un cajón temporal. Útil cuando necesitas cambiar de rama/tarea rápido sin hacer commit a medias. Se recupera con `git stash pop` (recupera y borra) o `git stash apply` (recupera sin borrar).
+
+**`git tag`:** Marca un commit específico como versión importante (ej: `v1.0`). Es como ponerle una etiqueta con nombre a una foto concreta del historial. Útil para volver exactamente a la versión entregada al cliente. Se crea con `git tag v1.0` y se sube con `git push --tags`.
